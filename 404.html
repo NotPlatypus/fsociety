@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 Not Found | FSociety Computer Services</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.ico">
+<style>
+@font-face{font-family:'MrRobot';src:url('fonts/MR_ROBOT.ttf') format('truetype');font-display:swap;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#0A0A0A;--surface:#111111;--text:#FFFFFF;--text-muted:#888888;--primary:#E01B1B;--green:#00FF41;--border:#222222;--font-mono:'Share Tech Mono','Courier New',monospace;--font-heading:'MrRobot','Share Tech Mono','Courier New',monospace;}
+body{background:var(--bg);color:var(--text);font-family:var(--font-mono);min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased;}
+header{border-bottom:1px solid var(--border);padding:0 20px;}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;height:64px;}
+.nav-logo{font-family:var(--font-heading);font-size:1.1rem;color:var(--primary);text-decoration:none;}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px;}
+.error-box{max-width:560px;width:100%;text-align:left;}
+.err-code{font-family:var(--font-heading);font-size:clamp(5rem,15vw,8rem);color:var(--primary);line-height:1;margin-bottom:8px;}
+.err-title{font-family:var(--font-heading);font-size:1.4rem;color:var(--text);margin-bottom:16px;}
+.terminal-line{font-size:0.85rem;color:var(--text-muted);margin-bottom:24px;}
+.green{color:var(--green);}
+p{color:var(--text-muted);line-height:1.7;margin-bottom:32px;font-size:0.95rem;}
+.actions{display:flex;flex-wrap:wrap;gap:14px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:8px;font-family:var(--font-mono);font-size:0.9rem;font-weight:700;letter-spacing:0.05em;cursor:pointer;transition:all 0.2s;text-decoration:none;border:2px solid transparent;min-height:48px;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.btn-primary{background:var(--primary);color:#fff;border-color:var(--primary);}
+.btn-primary:hover{background:#B01515;}
+.btn-outline{background:transparent;color:var(--green);border-color:var(--green);}
+.btn-outline:hover{background:rgba(0,255,65,0.08);}
+footer{border-top:1px solid var(--border);padding:20px;text-align:center;font-size:0.78rem;color:var(--text-muted);}
+footer a{color:var(--text-muted);}
+footer a:hover{color:var(--primary);}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"></noscript>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="/" class="nav-logo">FSociety<span style="color:#888888;">.exe</span></a>
+  </div>
+</header>
+<main>
+  <div class="error-box">
+    <div class="err-code">404</div>
+    <h1 class="err-title">Page Not Found</h1>
+    <div class="terminal-line"><span class="green">root@fsociety:~$</span> locate page ... <span style="color:var(--primary);">ERROR: File not found</span></div>
+    <p>The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+    <div class="actions">
+      <a href="/" class="btn btn-primary">← Back to Home</a>
+      <a href="tel:+10640328443" class="btn btn-outline">Call (064) 032-8443</a>
+    </div>
+  </div>
+</main>
+<footer>
+  © 2025 FSociety Computer Services · <a href="/">Home</a> · <a href="privacy-policy.html">Privacy Policy</a>
+</footer>
+</body>
+</html>
