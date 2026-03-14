@@ -58,7 +58,7 @@
   const status = document.getElementById('form-status');
 
   if (form && status) {
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
       const name = form.querySelector('#c-name').value.trim();
       const email = form.querySelector('#c-email').value.trim();
@@ -78,17 +78,34 @@
         return;
       }
 
-      // Simulate send (no backend endpoint for contact form)
       const btn = form.querySelector('button[type="submit"]');
       btn.disabled = true;
       btn.textContent = '> SENDING...';
 
-      setTimeout(function () {
-        showStatus('success', '> TRANSMISSION SUCCESSFUL. We\'ll be in touch within 24 hours.');
-        form.reset();
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            access_key: 'c5e10bbd-a173-409b-b54a-38a14ddc0387',
+            name,
+            email,
+            message: msg
+          })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showStatus('success', '> TRANSMISSION SUCCESSFUL. We\'ll be in touch within 24 hours.');
+          form.reset();
+        } else {
+          showStatus('error', '> ERROR: Failed to send. Please try again.');
+        }
+      } catch (e) {
+        showStatus('error', '> ERROR: Connection failed. Try again.');
+      } finally {
         btn.disabled = false;
         btn.textContent = 'Send Message';
-      }, 800);
+      }
     });
   }
 
